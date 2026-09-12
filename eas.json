@@ -1,0 +1,33 @@
+{
+  "cli": {
+    "appVersionSource": "local"
+  },
+  "build": {
+    "shared": {
+      "env": {
+        "EXPO_PUBLIC_SPOTIFY_TOKEN_ENDPOINT": "https://look-ups.net/api/spotify-token"
+      }
+    },
+    "development": {
+      "extends": "shared",
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "extends": "shared",
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "extends": "shared",
+      "android": {
+        "buildType": "app-bundle"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
